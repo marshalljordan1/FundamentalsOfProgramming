@@ -1,0 +1,34 @@
+package herencia;
+
+
+public class Hotel extends Building {
+
+	public Hotel(String name, int numFloors, int surfaceArea) {
+		super(name, numFloors, surfaceArea);
+	}
+	
+	/* Room service is available in the hotels every day. It is estimated that each service member 
+	 * can accommodate 20 rooms. A method will be created that calculates, and displays on screen: 
+	 * a) How many people are needed to attend the hotel room service. b) What is the total required 
+	 * for the salaries of these people, taking into account that each person receives 1,000 euros 
+	 * per month.
+	 */
+	
+	public void roomService() {
+		int numStaff;
+		int salary = 0;
+		int rooms = 0;
+		
+		numStaff = 20;
+		
+		System.out.println("The number of people needed to attend the hotel room service: "+ numStaff +". The total required for the salaries of these people: "+ salary + rooms);
+		
+	}
+
+	@Override
+	public String CalculatingCostSurveillance() {
+			double guards = Math.ceil((double)this.getSurfaceArea() / 1000);
+			double costGuard = (guards * 1300);
+			return "The monthly cost of the guards is: " + costGuard + " N° of guards: "+ guards;
+		}
+	}

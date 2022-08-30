@@ -1,0 +1,14 @@
+
+public class OOP {
+
+	public static void main(String[] args) {
+		User u = new User();
+		
+		u.set_name("Jordan");
+		u.set_membership("Premium");
+		
+		System.out.println(u.get_name());
+		System.out.println(u.get_membership());
+	}
+
+}

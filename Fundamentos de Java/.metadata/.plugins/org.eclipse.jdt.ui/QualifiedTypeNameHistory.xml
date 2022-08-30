@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.ListIterator"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="herencia.Cinema"/>
+    <fullyQualifiedTypeName name="herencia.Hotel"/>
+    <fullyQualifiedTypeName name="herencia.Hospital"/>
+    <fullyQualifiedTypeName name="herencia.Building"/>
+    <fullyQualifiedTypeName name="carChampionship.Teams"/>
+    <fullyQualifiedTypeName name="carChampionship.Cars"/>
+    <fullyQualifiedTypeName name="java.sql.Driver"/>
+    <fullyQualifiedTypeName name="carChampionship.Mechanics"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="User.Membership"/>
+</qualifiedTypeNameHistroy>

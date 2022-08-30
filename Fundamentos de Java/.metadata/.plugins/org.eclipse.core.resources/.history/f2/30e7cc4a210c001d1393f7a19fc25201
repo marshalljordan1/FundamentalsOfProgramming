@@ -1,0 +1,146 @@
+package m8_4Main;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import herencia.Building;
+import herencia.Cinema;
+import herencia.Hospital;
+import herencia.Hotel;
+
+public class Main {
+	
+	static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		ArrayList<Building> listBuildings = new ArrayList<Building>();
+		
+		Cinema odeon = new Cinema("Odeon", 15, 4000, 100);
+		Cinema vue = new Cinema("Vue", 30, 2500, 100);
+		Hotel hilton = new Hotel("Hilton", 25, 1000);
+		Hotel raddison = new Hotel("Raddison Blu", 25, 1000);
+		Hospital castleHill = new Hospital("Castle Hill", 25, 1000, 1300);
+		Hospital hullRoyal = new Hospital("Hull Royal", 25, 1000, 700);
+		
+		listBuildings.add(odeon);
+		listBuildings.add(vue);
+		listBuildings.add(hilton);
+		listBuildings.add(raddison);
+		listBuildings.add(castleHill);
+		listBuildings.add(hullRoyal);
+		
+		System.out.println(listBuildings);
+		
+		boolean exit = false;
+		
+		do {
+			switch (mainMenu()) {
+			case 1:
+				position = searchBuilding(listBuildings);
+				createBuilding(listBuildings, position);
+				break;
+			case 2:
+				deleteBuilding(listBuildings);
+				break;
+			case 3:
+				showBuildingl(listBuildings);
+				break;
+			case 0:
+				System.out.println("Thank you for using this application.");
+				exit = true;
+			}
+		} while (!exit);
+		
+		System.out.println(listBuildings);
+	}
+	
+	
+	private static int searchBuilding(ArrayList<Building> listBuilding) {
+		boolean found = false;
+		int position = -1;
+		int i = 0;
+		String name;
+		
+		int size = listBuilding.size();
+		
+		System.out.println("Enter the name of the building you want to find: ");
+		name = sc.nextLine();
+		
+		while (!found && i < size) {
+			if (listBuilding.get(i).getName().equalsIgnoreCase(name)) {
+				found = true;
+				position = i;
+			}
+			i++;
+		}
+		return position;
+	}
+
+
+	private static void createBuilding(ArrayList<Building> listBuilding, int position) {
+		
+		boolean exit = false;
+		
+		findBuilding();
+		
+		do  {
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("Enter name of hotel: ");
+			String name = sc.nextLine();
+			sc.nextLine();
+			
+			System.out.println("Enter number of floors: ");
+			int numFloors = sc.nextInt();
+
+			System.out.println("Enter total surface area of hotel: ");
+			int surfaceArea = sc.nextInt();
+
+			Building building = new Building(name, numFloors, surfaceArea);
+
+			listBuilding.add(building);
+			
+
+		} while (!exit);
+			System.out.println("The hotel you are looking for is not in our database");
+	}
+		
+	
+	private static void findBuilding() {
+		
+		
+	}
+
+
+	private static void deleteBuilding(ArrayList<Building> arrBuilding) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void showBuildingl(ArrayList<Building> arrBuilding) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static byte mainMenu() {
+		
+		byte option;
+		final byte MIN = 0;
+		final byte MAX = 3;
+		
+		do {
+			System.out.println("\n*** MAIN MENU ***\n");
+			System.out.println("1. Register a new building");
+			System.out.println("2. Display building");
+			System.out.println("3. Remove building");
+			System.out.println("0. Exit application\n");
+			option = sc.nextByte();
+			
+			if (option < MIN || option > MAX) {
+				System.out.println("Choose a valid option!");
+			}
+		} while (option < MIN || option > MAX);
+		return option;
+	}
+
+	}

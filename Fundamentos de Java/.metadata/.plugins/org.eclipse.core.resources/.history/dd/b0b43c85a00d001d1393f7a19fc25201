@@ -1,0 +1,28 @@
+package carChampionship;
+
+/* For the mechanics, they want to know if they have 
+ * 
+ * advanced degrees in mechanics or not. And their salary is 
+ * 
+ * calculated by adding 10,000 for each year of seniority at the
+ * 
+ *  team plus the base salary. */
+
+public class Mechanics extends Teams {
+	
+	//private boolean advDegree;
+	private int salary;
+	
+	public Mechanics(String teamName, int budget, String country, boolean advDegree, int salary) {
+		super(teamName, budget, country);
+		//this.advDegree = advDegree;
+		this.salary = salary;
+		//advDegree = false;
+		
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+	
+}
